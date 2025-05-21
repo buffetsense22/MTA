@@ -1,0 +1,193 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Styles */
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.5); /* Background for the body */
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background: url('Master Thai Parts background logo.jpg') no-repeat center center;
+    background-size: cover; /* Cover the entire container */
+    background-attachment: fixed; /* Create parallax effect */
+    position: relative;
+    padding-left: 150px; /* Space for the sidebar */
+    padding-top: 90px; /* Space for the navbar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Semi-transparent overlay */
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure it covers the background image */
+}
+
+.main > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Navbar */
+.navbar {
+    width: 100%; /* Full width of the screen */
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    left: 0;
+    z-index: 3; /* Ensure the navbar is above the overlay */
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker background for better text visibility */
+    padding: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    color: #fff; /* Set text color to white */
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li {
+    margin-left: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff; /* Set text color to white */
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: #000;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 150px;
+    height: 100vh;
+    background: rgba(0, 0, 2, 0.8);
+    position: fixed; /* Make the sidebar fixed */
+    top: 90px; /* Adjust for navbar height */
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    z-index: 3;
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #fff; /* Set text color to white */
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Page Content */
+.page-content {
+    flex: 1;
+    padding: 50px;
+    margin-left: 150px; /* Adjust for sidebar width */
+    margin-top: 0px; /* Adjust for navbar height */
+    color: #fff; /* Set text color to white */
+}
+
+.page-content h1 {
+    margin-bottom: 20px;
+    color: #fff; /* Set text color to white */
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px; /* Gap between buttons */
+    margin: 20px auto; /* Center the container */
+}
+
+.cn {
+    width: 100%;
+}
+
+.cn a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff; /* Set text color to white */
+    background-color: #333;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cn a:hover {
+    background-color: #555;
+}
